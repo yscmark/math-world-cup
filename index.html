@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math World Cup</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+</head>
+<body>
+    <!-- Home Screen -->
+    <div id="homeScreen" class="screen active">
+        <p class="title">⚽ Math 2026 World Cup ⚽</p>
+        <button id="startBtn" class="btn-primary">Start Tournament</button>
+    </div>
+
+    <!-- Team Selection Screen -->
+    <div id="teamSelectScreen" class="screen">
+        <p class="title">Select Your Team</p>
+        <p id="subtitle">Stronger teams need fewer correct answers to score a goal</p>
+        <div id="teamsContainer" class="teams-grid"></div>
+        <button id="confirmTeamBtn" class="btn-primary" disabled>Confirm Team</button>
+    </div>
+
+    <!-- Bracket Screen -->
+    <div id="bracketScreen" class="screen">
+        <p class="title">Tournament Bracket</p>
+        <div id="bracketContainer" class="bracket"></div>
+        <button id="nextMatchBtn" class="btn-primary" style="display: none;">Play Next Match</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div class="game-header">
+            <div id="matchInfo" class="match-info"></div>
+            <p id="timer"></p>
+        </div>
+        <div class="scoreboard">
+            <div class="team-score">
+                <span id="playerTeamName"></span>
+                <span id="playerScore">0</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team-score">
+                <span id="cpuTeamName"></span>
+                <span id="cpuScore">0</span>
+            </div>
+        </div>
+        <div class="game">
+						<div class="field-container">
+							<img id="soccer-field" src="assets/soccer.png" alt="Soccer Field">
+							<img id="soccer-ball" src="assets/ball.png" alt="Soccer ball" style="display: none;">
+						</div>
+            <p id="equation"></p>
+            <input id="answer" name="answer" type="number" placeholder="Enter answer...">
+            <p id="result"></p>
+            <div class="progress-container">
+                <div id="goalProgress" class="progress-bar">0/0</div>
+            </div>
+            <div class="math-stats">
+                <span>⚽ Goals: <span id="goalsScored">0</span></span>
+                <span>✅ Correct: <span id="correctAnswers">0</span></span>
+                <span>❌ Misses: <span id="misses">0</span></span>
+                <span>🔥 Streak: <span id="streak">0</span></span>
+            </div>
+            <div id="goalsPerCorrect" class="goals-info"></div>
+        </div>
+    </div>
+
+    <script src="math.js"></script>
+</body>
+</html>
